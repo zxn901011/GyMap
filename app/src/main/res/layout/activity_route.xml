@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hisense.gygov.gymap.activity.RouteActivity">
+
+    <FrameLayout
+        android:id="@+id/route_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/status_guide_bar_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="126px">
+
+            <ImageView
+                android:id="@+id/route_title_back"
+                android:layout_width="126px"
+                android:layout_height="126px"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/title_bar_back_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="选择路线"
+                android:textColor="#ffffff"
+                android:textSize="54px" />
+        </RelativeLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="379px"
+        android:layout_below="@id/route_title_bar"
+        android:orientation="vertical"
+        android:id="@+id/ll_origin_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="251px"
+            android:background="@color/gray4">
+
+            <LinearLayout
+                android:id="@+id/route_origin_root"
+                android:layout_width="wrap_content"
+                android:layout_height="120px"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="1px"
+                android:layout_marginBottom="2px">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/icon_st" />
+
+                <TextView
+                    android:id="@+id/route_origin_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10px"
+                    android:text="我的位置"
+                    android:textSize="46px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/route_destination_root"
+                android:layout_width="wrap_content"
+                android:layout_height="120px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="4px"
+                android:layout_marginBottom="4px">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/icon_en" />
+
+                <TextView
+                    android:id="@+id/route_destination_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10px"
+                    android:text=""
+                    android:textSize="46px" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#bdbdbd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="126px"
+            android:background="@color/gray4">
+
+            <RelativeLayout
+                android:id="@+id/walk_item"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/walk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="步行"
+                    android:onClick="searchButtonProcess"
+                    android:textSize="40px" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/bus_item"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/bus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="公交"
+                    android:onClick="searchButtonProcess"
+                    android:textSize="40px" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/car_item"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="驾车"
+                    android:onClick="searchButtonProcess"
+                    android:textSize="40px" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bike_item"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <Button
+                    android:id="@+id/bike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="骑行"
+                    android:onClick="searchButtonProcess"
+                    android:textSize="40px" />
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#bdbdbd"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_origin_layout"
+        android:orientation="vertical">
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.hisense.gygov.gymap.activity.MainActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fl_layout"
+        android:layout_above="@id/ll">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"/>
+        <RelativeLayout
+            android:id="@+id/rl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp">
+            <AutoCompleteTextView
+                android:id="@+id/et_text"
+                android:background="@drawable/searchview_line"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="2dp"
+                android:completionThreshold="2"
+                android:hint="搜地点、查公交、找线路"
+                android:padding="5dp"/>
+            <Button
+                android:id="@+id/bt_seek"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_alignRight="@id/et_text"
+                android:text="搜索"
+                android:layout_marginLeft="5dp"
+                android:textColor="#FCFCFC"
+                android:background="@drawable/btn_bg_red"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="复位" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="卫星" />
+
+        <Button
+            android:id="@+id/buttons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="普通" />
+        <Button
+            android:id="@+id/button_road"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="路况" />
+        <Button
+            android:id="@+id/button_hot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="热力图" />
+    </LinearLayout>
+</RelativeLayout>
